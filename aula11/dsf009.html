@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBGE</title>
+    <style>
+        h1 {
+            font: bold 4em Arial;
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+            font: normal 2em Arial;
+        }
+        div {
+            text-align: center;
+            font: normal 30px Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>IBGE</h1>
+    <h2>Onde você mora? <input type="text" name="pais" id="paisor"><input type="button" value="procurar" onclick="procurar()"></h2>
+    <div id="texto1">
+
+    </div>
+
+    <script>
+        function procurar(){
+            var paisorigem = document.querySelector('input#paisor').value;
+            var texto = document.getElementById('texto1')
+            if (paisorigem != 'Brasil') {
+                texto.innerHTML = `Morando em <strong>${paisorigem}</strong>, você é Estrangeiro!`
+            }else{
+                texto.innerHTML = `Morando em <strong>${paisorigem}</strong>, você é Brasileiro!`
+            }
+
+        }
+    </script>
+</body>
+</html>
